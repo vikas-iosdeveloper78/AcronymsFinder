@@ -1,0 +1,116 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10116" systemVersion="15C50" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="BYZ-38-t0r">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+    </dependencies>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController storyboardIdentifier="MainController" id="BYZ-38-t0r" customClass="ViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
+                        <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="MCv-TB-Mn5">
+                                <rect key="frame" x="214" y="204" width="172" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="172" id="KgU-D7-Lv8"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                <state key="normal" title="Click Here for Acronyms"/>
+                                <connections>
+                                    <action selector="didTapClickHereForAcronyms:" destination="BYZ-38-t0r" eventType="touchUpInside" id="oMF-uK-tdY"/>
+                                </connections>
+                            </button>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Enter Text" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="gVX-Ie-dYg">
+                                <rect key="frame" x="211" y="124" width="179" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="30" id="GZw-jU-xEf"/>
+                                    <constraint firstAttribute="width" constant="179" id="MtG-Rv-rT8"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no"/>
+                                <variation key="default">
+                                    <mask key="constraints">
+                                        <exclude reference="GZw-jU-xEf"/>
+                                    </mask>
+                                </variation>
+                                <connections>
+                                    <outlet property="delegate" destination="BYZ-38-t0r" id="IX5-lU-tjo"/>
+                                </connections>
+                            </textField>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" relation="lessThanOrEqual" secondItem="MCv-TB-Mn5" secondAttribute="bottom" priority="750" constant="500" id="1yU-JW-WFj"/>
+                            <constraint firstItem="gVX-Ie-dYg" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="6EJ-tX-epV"/>
+                            <constraint firstItem="gVX-Ie-dYg" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="104" id="6aF-XW-71G"/>
+                            <constraint firstItem="MCv-TB-Mn5" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="Tzi-JJ-FgP"/>
+                            <constraint firstItem="MCv-TB-Mn5" firstAttribute="top" secondItem="gVX-Ie-dYg" secondAttribute="bottom" constant="50" id="xeA-9v-og7"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="textField" destination="gVX-Ie-dYg" id="Ha9-OZ-IxN"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-451" y="122"/>
+        </scene>
+        <!--Abbreviation Table View Controller-->
+        <scene sceneID="AQU-jS-bHr">
+            <objects>
+                <tableViewController storyboardIdentifier="AbbreviationTableController" id="cte-f3-y75" customClass="AbbreviationTableViewController" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" id="U1n-Cp-7Dv">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <color key="separatorColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                        <prototypes>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" reuseIdentifier="cellIdentifier" rowHeight="60" id="6QE-t7-gyV" customClass="AbbreviationTableViewCell">
+                                <rect key="frame" x="0.0" y="28" width="600" height="60"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="6QE-t7-gyV" id="r3k-C8-HCn">
+                                    <rect key="frame" x="0.0" y="0.0" width="600" height="59.5"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Uxc-l1-ZKP">
+                                            <rect key="frame" x="38" y="10" width="523" height="40"/>
+                                            <constraints>
+                                                <constraint firstAttribute="height" constant="40" id="6vu-2d-q3a"/>
+                                            </constraints>
+                                            <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                            <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                    </subviews>
+                                    <constraints>
+                                        <constraint firstItem="Uxc-l1-ZKP" firstAttribute="top" secondItem="r3k-C8-HCn" secondAttribute="topMargin" constant="2" id="L9o-Fg-krw"/>
+                                        <constraint firstItem="Uxc-l1-ZKP" firstAttribute="centerX" secondItem="r3k-C8-HCn" secondAttribute="centerX" id="aG7-fn-jsk"/>
+                                        <constraint firstItem="Uxc-l1-ZKP" firstAttribute="leading" secondItem="r3k-C8-HCn" secondAttribute="leadingMargin" constant="30" id="rh5-iV-0pW"/>
+                                    </constraints>
+                                </tableViewCellContentView>
+                                <connections>
+                                    <outlet property="abbreviationLbl" destination="Uxc-l1-ZKP" id="4RD-6n-XqM"/>
+                                </connections>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="cte-f3-y75" id="cs8-T9-Tb6"/>
+                            <outlet property="delegate" destination="cte-f3-y75" id="nfY-A1-zz2"/>
+                        </connections>
+                    </tableView>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="XmX-5V-waK" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="565" y="130"/>
+        </scene>
+    </scenes>
+</document>
