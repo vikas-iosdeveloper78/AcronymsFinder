@@ -69,6 +69,7 @@
         }];
 }
 
+//launch abbreviation VC
 -(void)showAbbreviationListController:(NSArray *)array {
     
     UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
